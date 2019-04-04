@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customEntry="clr-namespace:CustomEntry"
+             xmlns:local="clr-namespace:App2"
+             x:Class="App2.MainPage"
+             BackgroundColor= "#a80000">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="NormalStackLayout" TargetType="StackLayout">
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="Padding" Value="45,20,95,5"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="Orientation" Value="Horizontal"/>
+                <Setter Property="Spacing" Value="35"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+        
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="15" Padding="0" Orientation="Vertical">
+                <StackLayout HeightRequest="50">
+                    <Picker Title="Select a monkey">
+                     <Picker.Items>
+                        <x:String>Baboon</x:String>
+                        <x:String>Capuchin Monkey</x:String>
+                        <x:String>Blue Monkey</x:String>
+                        <x:String>Squirrel Monkey</x:String>
+                        <x:String>Golden Lion Tamarin</x:String>
+                        <x:String>Howler Monkey</x:String>
+                        <x:String>Japanese Macaque</x:String>
+                     </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 1" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <customEntry:MyEntry MaxLength="2" HorizontalOptions="FillAndExpand" FontSize="10" VerticalOptions="CenterAndExpand" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 2" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry MaxLength="2" HorizontalOptions="FillAndExpand" FontSize="20" VerticalOptions="Center" BackgroundColor="White" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 3" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry MaxLength="2" FontSize = "Small" HorizontalOptions="FillAndExpand" VerticalOptions="Start" BackgroundColor="White" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 4" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry MaxLength="2" HorizontalOptions="FillAndExpand" BackgroundColor="White" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 5" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry MaxLength="2" HorizontalOptions="FillAndExpand" BackgroundColor="White" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 6" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry MaxLength="2" HorizontalOptions="FillAndExpand" BackgroundColor="White" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 7" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry MaxLength="2" HorizontalOptions="FillAndExpand" BackgroundColor="White" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 8" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry MaxLength="2" HorizontalOptions="FillAndExpand" BackgroundColor="White" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 9" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry MaxLength="2" HorizontalOptions="FillAndExpand" BackgroundColor="White" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 10" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry MaxLength="2" HorizontalOptions="FillAndExpand" BackgroundColor="White" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 11" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry MaxLength="2" HorizontalOptions="FillAndExpand" BackgroundColor="White" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 12" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry MaxLength="2" HorizontalOptions="FillAndExpand" BackgroundColor="White" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 13" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry MaxLength="2" HorizontalOptions="FillAndExpand" BackgroundColor="White" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 14" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry MaxLength="2" HorizontalOptions="FillAndExpand" BackgroundColor="White" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 15" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry MaxLength="2" HorizontalOptions="FillAndExpand" BackgroundColor="White" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 16" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry MaxLength="2" HorizontalOptions="FillAndExpand" BackgroundColor="White" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 17" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry MaxLength="2" HorizontalOptions="FillAndExpand" BackgroundColor="White" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 18" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry MaxLength="2" HorizontalOptions="FillAndExpand" BackgroundColor="White" Keyboard="Numeric" ReturnType="Next"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+    
+
+</ContentPage>
+
+
+<!--Future: Create a DataTemplate with a ViewCell with an Horizontal Stacklayout 
+
+<Label Text="Hole 1" Grid.Row="0" Grid.Column="0"/>
+<Entry MaxLength="2" Keyboard="Numeric" ReturnType="Next" Grid.Row="0" Grid.Column="1"/>
+
+<Label Text="Hole 2" Grid.Row="1" Grid.Column="0"/>
+<Entry MaxLength="2" Keyboard="Numeric" ReturnType="Next" Grid.Row="1" Grid.Column="1"/>
+
+<Label Text="Hole 3" Grid.Row="2" Grid.Column="0"/>
+<Entry MaxLength="2" Keyboard="Numeric" ReturnType="Next" Grid.Row="2" Grid.Column="1"/>
+
+<Label Text="Hole 4" Grid.Row="3" Grid.Column="0"/>
+<Entry MaxLength="2" Keyboard="Numeric" ReturnType="Next" Grid.Row="3" Grid.Column="1"/>
+
+<Label Text="Hole 5" Grid.Row="4" Grid.Column="0"/>
+<Entry MaxLength="2" Keyboard="Numeric" ReturnType="Next" Grid.Row="4" Grid.Column="1"/>
+
+<Label Text="Hole 6" Grid.Row="5" Grid.Column="0"/>
+<Entry MaxLength="2" Keyboard="Numeric" ReturnType="Next" Grid.Row="5" Grid.Column="1"/>
+
+<Label Text="Hole 7" Grid.Row="6" Grid.Column="0"/>
+<Entry MaxLength="2" Keyboard="Numeric" ReturnType="Next" Grid.Row="6" Grid.Column="1"/>
+
+<Label Text="Hole 8" Grid.Row="7" Grid.Column="0"/>
+<Entry MaxLength="2" Keyboard="Numeric" ReturnType="Next" Grid.Row="7" Grid.Column="1"/>
+
+<Label Text="Hole 9" Grid.Row="8" Grid.Column="0"/>
+<Entry MaxLength="2" Keyboard="Numeric" ReturnType="Next" Grid.Row="8" Grid.Column="1"/>-->
