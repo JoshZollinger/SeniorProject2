@@ -20,6 +20,27 @@ namespace App2
             
 
         }
+
+        void MyEntry_Completed(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("success");
+            var entry = sender as MyEntry; // .. and check for null
+            var list = (entry.Parent.Parent as StackLayout).Children; //assumes a StackLayout
+            var index = list.IndexOf(entry.Parent as StackLayout); // what if IndexOf returns -1?
+            var nextIndex = (index + 1) > list.Count ? 0 : index + 1; //first or next element?
+            var next = list.ElementAt(nextIndex);
+            var nextStackLayoutElements = (list.ElementAt(nextIndex) as StackLayout).Children;
+            System.Diagnostics.Debug.WriteLine(nextIndex);
+            System.Diagnostics.Debug.WriteLine(nextStackLayoutElements);
+            System.Diagnostics.Debug.WriteLine(nextStackLayoutElements.Count);
+            if (nextStackLayoutElements.Count > 1)
+            {
+                var nextEntry = nextStackLayoutElements.ElementAt(1);
+                nextEntry?.Focus();
+            }
+
+
+        }
     }
 
 
