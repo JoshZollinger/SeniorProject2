@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App2.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,7 @@ namespace App2
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new StatsPage()); //new MainPage();
         }
 
         protected override void OnStart()
