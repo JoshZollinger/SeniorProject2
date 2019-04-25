@@ -18,6 +18,22 @@
                     <StackLayout Orientation="Horizontal">
                         <Label Text="{Binding Hole1}"/>
                         <Label Text="{Binding Hole2}"/>
+                        <Label Text="{Binding Hole3}"/>
+                        <Label Text="{Binding Hole4}"/>
+                        <Label Text="{Binding Hole5}"/>
+                        <Label Text="{Binding Hole6}"/>
+                        <Label Text="{Binding Hole7}"/>
+                        <Label Text="{Binding Hole8}"/>
+                        <Label Text="{Binding Hole9}"/>
+                        <Label Text="{Binding Hole10}"/>
+                        <Label Text="{Binding Hole11}"/>
+                        <Label Text="{Binding Hole12}"/>
+                        <Label Text="{Binding Hole13}"/>
+                        <Label Text="{Binding Hole14}"/>
+                        <Label Text="{Binding Hole15}"/>
+                        <Label Text="{Binding Hole16}"/>
+                        <Label Text="{Binding Hole17}"/>
+                        <Label Text="{Binding Hole18}"/>
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>

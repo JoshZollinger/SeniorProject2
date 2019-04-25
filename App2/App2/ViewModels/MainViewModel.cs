@@ -26,7 +26,7 @@ namespace App2.ViewModels
         {
             var GolfScoreServices = new GolfScoreServices();
 
-            GolfScoresList = GolfScoreServices.GetGolfScores();
+            GolfScoresList = GolfScoreServices.GetGolfScore();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

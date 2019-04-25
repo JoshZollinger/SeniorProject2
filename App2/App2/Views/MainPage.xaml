@@ -40,76 +40,77 @@
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 1" WidthRequest="40" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="green"/>
-                    <customEntry:MyEntry  TabIndex="1" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed" />
+                    <customEntry:MyEntry x:Name="Hole1Entry"  TabIndex="1" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed" />
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 2" WidthRequest="40" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="green"/>
-                    <customEntry:MyEntry TabIndex="2" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                    <customEntry:MyEntry x:Name="Hole2Entry" TabIndex="2" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 3" WidthRequest="40" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="green"/>
-                    <customEntry:MyEntry TabIndex="3" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                    <customEntry:MyEntry x:Name="Hole3Entry" TabIndex="3" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 4" WidthRequest="40" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <customEntry:MyEntry TabIndex="4" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                    <customEntry:MyEntry x:Name="Hole4Entry" TabIndex="4" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 5" WidthRequest="40" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <customEntry:MyEntry TabIndex="5" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                    <customEntry:MyEntry x:Name="Hole5Entry" TabIndex="5" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 6"  WidthRequest="40" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <customEntry:MyEntry TabIndex="6" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                    <customEntry:MyEntry x:Name="Hole6Entry" TabIndex="6" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 7" WidthRequest="40" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <customEntry:MyEntry TabIndex="7" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                    <customEntry:MyEntry x:Name="Hole7Entry" TabIndex="7" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 8" WidthRequest="40" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <customEntry:MyEntry TabIndex="8" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                    <customEntry:MyEntry x:Name="Hole8Entry" TabIndex="8" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 9" WidthRequest="40" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <customEntry:MyEntry TabIndex="9" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                    <customEntry:MyEntry x:Name="Hole9Entry" TabIndex="9" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 10" WidthRequest="39" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="green"/>
-                    <customEntry:MyEntry TabIndex="10" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                    <customEntry:MyEntry x:Name="Hole10Entry" TabIndex="10" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 11" WidthRequest="39" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <customEntry:MyEntry TabIndex="11" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                    <customEntry:MyEntry x:Name="Hole11Entry" TabIndex="11" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 12" WidthRequest="39" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <customEntry:MyEntry TabIndex="12" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                    <customEntry:MyEntry x:Name="Hole12Entry" TabIndex="12" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 13" WidthRequest="39" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <customEntry:MyEntry TabIndex="13" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                    <customEntry:MyEntry x:Name="Hole13Entry" TabIndex="13" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 14" WidthRequest="39" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <customEntry:MyEntry TabIndex="14" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                    <customEntry:MyEntry x:Name="Hole14Entry" TabIndex="14" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 15" WidthRequest="39" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <customEntry:MyEntry TabIndex="15" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                    <customEntry:MyEntry x:Name="Hole15Entry" TabIndex="15" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 16" WidthRequest="39" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <customEntry:MyEntry TabIndex="16" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                    <customEntry:MyEntry x:Name="Hole16Entry" TabIndex="16" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 17" WidthRequest="39" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <customEntry:MyEntry TabIndex="17" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                    <customEntry:MyEntry x:Name="Hole17Entry" TabIndex="17" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
                 </StackLayout>
                 <StackLayout Style="{StaticResource NormalStackLayout}">
                     <Label Text="Hole 18" WidthRequest="39" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <customEntry:MyEntry TabIndex="18" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                    <customEntry:MyEntry x:Name="Hole18Entry" TabIndex="18" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
                 </StackLayout>
+                <Button x:Name="SubmitButton" Text="Submit" Clicked="SubmitButton_Clicked"></Button>
               </StackLayout>
         </ScrollView>
     </ContentPage.Content>

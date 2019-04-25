@@ -9,7 +9,7 @@ using Xamarin.Forms.Xaml;
 
 namespace App2.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+   // [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StatsPage : ContentPage
     {
         public StatsPage()
