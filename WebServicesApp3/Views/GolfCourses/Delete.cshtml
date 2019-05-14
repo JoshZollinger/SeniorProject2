@@ -1,0 +1,176 @@
+﻿@model WebServicesApp3.Models.GolfCourse
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>GolfCourse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Par1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Par2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Par3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Par4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Par5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Par6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Par7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Par8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Par9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Par10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Par11)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par11)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Par12)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par12)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Par13)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par13)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Par14)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par14)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Par15)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par15)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Par16)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par16)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Par17)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par17)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Par18)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Par18)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.courseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.courseName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

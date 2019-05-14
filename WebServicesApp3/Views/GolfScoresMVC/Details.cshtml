@@ -1,0 +1,210 @@
+﻿@model App2.Models.GolfScore
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GolfScore</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole11)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole11)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole12)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole12)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole13)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole13)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole14)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole14)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole15)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole15)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole16)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole16)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole17)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole17)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hole18)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hole18)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.roundNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.roundNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.scoreDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.scoreDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.courseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.courseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eventName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eventName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
