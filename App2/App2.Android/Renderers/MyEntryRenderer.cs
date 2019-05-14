@@ -37,7 +37,6 @@ namespace CustomRenderer
 
                 Control.SetBackground(gradientDrawable);
                 
-                //Control.SetBackgroundColor(global::Android.Graphics.Color.LawnGreen);
                 Control.SetTextSize(global::Android.Util.ComplexUnitType.Dip, 12);
                 Control.SetTextColor(global::Android.Graphics.Color.DarkRed);
                 Control.SetPadding(0,0,0,0);
