@@ -3,43 +3,101 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App2.Views.StatsPage"
              xmlns:ViewModels="clr-namespace:App2.ViewModels;assembly=App2"
+             
              >
 
     <ContentPage.BindingContext>
-        <ViewModels:MainViewModel/>
+        <ViewModels:scoreViewModel/>
     </ContentPage.BindingContext>
-  
-        
     
-    <ListView ItemsSource="{Binding GolfScoresList}" HasUnevenRows="True">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="{Binding Hole1}"/>
-                        <Label Text="{Binding Hole2}"/>
-                        <Label Text="{Binding Hole3}"/>
-                        <Label Text="{Binding Hole4}"/>
-                        <Label Text="{Binding Hole5}"/>
-                        <Label Text="{Binding Hole6}"/>
-                        <Label Text="{Binding Hole7}"/>
-                        <Label Text="{Binding Hole8}"/>
-                        <Label Text="{Binding Hole9}"/>
-                        <Label Text="{Binding Hole10}"/>
-                        <Label Text="{Binding Hole11}"/>
-                        <Label Text="{Binding Hole12}"/>
-                        <Label Text="{Binding Hole13}"/>
-                        <Label Text="{Binding Hole14}"/>
-                        <Label Text="{Binding Hole15}"/>
-                        <Label Text="{Binding Hole16}"/>
-                        <Label Text="{Binding Hole17}"/>
-                        <Label Text="{Binding Hole18}"/>
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
-        
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="normalLabel" TargetType="Label">
+                <Setter Property="MinimumWidthRequest" Value="20"/>
+                <Setter Property="WidthRequest" Value="21"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="TextColor" Value="Black"/>
+                
+            </Style>
+            <Style x:Key="headerLabel" TargetType="Label">
+                <Setter Property="MinimumWidthRequest" Value="20"/>
+                <Setter Property="WidthRequest" Value="21"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0">
+            <ScrollView Orientation="Horizontal">
+                <ListView RowHeight="20" SelectionMode="None" MinimumWidthRequest="1000" WidthRequest="1000" ItemsSource="{Binding GolfScoresList}" HasUnevenRows="False">
+                    <ListView.Header>
+                        <StackLayout Padding="0">
+                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" MinimumWidthRequest="1000" Orientation="Horizontal">
+                                <Label Text="First" Style="{StaticResource normalLabel}" MinimumWidthRequest="90" WidthRequest="90"/>
+                                <Label Text="Last" Style="{StaticResource normalLabel}" MinimumWidthRequest="90" WidthRequest="90"/>
+                                <Label Text="Course" Style="{StaticResource normalLabel}" MinimumWidthRequest="90" WidthRequest="90"/>
+                                <Label Text="1" Style="{StaticResource normalLabel}" />
+                                <Label Text="2" Style="{StaticResource normalLabel}"/>
+                                <Label Text="3" Style="{StaticResource normalLabel}"/>
+                                <Label Text="4" Style="{StaticResource normalLabel}"/>
+                                <Label Text="5" Style="{StaticResource normalLabel}"/>
+                                <Label Text="6" Style="{StaticResource normalLabel}"/>
+                                <Label Text="7" Style="{StaticResource normalLabel}"/>
+                                <Label Text="8" Style="{StaticResource normalLabel}"/>
+                                <Label Text="9" Style="{StaticResource normalLabel}"/>
+                                <Label Text="10" Style="{StaticResource normalLabel}"/>
+                                <Label Text="11" Style="{StaticResource normalLabel}"/>
+                                <Label Text="12" Style="{StaticResource normalLabel}"/>
+                                <Label Text="13" Style="{StaticResource normalLabel}"/>
+                                <Label Text="14" Style="{StaticResource normalLabel}"/>
+                                <Label Text="15" Style="{StaticResource normalLabel}"/>
+                                <Label Text="16" Style="{StaticResource normalLabel}"/>
+                                <Label Text="17" Style="{StaticResource normalLabel}"/>
+                                <Label Text="18" Style="{StaticResource normalLabel}"/>
+                                <BoxView BackgroundColor="Black" HeightRequest="1" WidthRequest="1000"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding firstName}" Style="{StaticResource normalLabel}" MinimumWidthRequest="90" WidthRequest="90"/>
+                                    <Label Text="{Binding lastName}" Style="{StaticResource normalLabel}" MinimumWidthRequest="90" WidthRequest="90"/>
+                                    <Label Text="{Binding courseName}" Style="{StaticResource normalLabel}" MinimumWidthRequest="90" WidthRequest="90"/>
+                                    <Label Text="{Binding Hole1}" Style="{StaticResource normalLabel}"/>
+                                    <Label Text="{Binding Hole2}" Style="{StaticResource normalLabel}"/>
+                                    <Label Text="{Binding Hole3}" Style="{StaticResource normalLabel}"/>
+                                    <Label Text="{Binding Hole4}" Style="{StaticResource normalLabel}"/>
+                                    <Label Text="{Binding Hole5}" Style="{StaticResource normalLabel}"/>
+                                    <Label Text="{Binding Hole6}" Style="{StaticResource normalLabel}"/>
+                                    <Label Text="{Binding Hole7}" Style="{StaticResource normalLabel}"/>
+                                    <Label Text="{Binding Hole8}" Style="{StaticResource normalLabel}"/>
+                                    <Label Text="{Binding Hole9}" Style="{StaticResource normalLabel}"/>
+                                    <Label Text="{Binding Hole10}" Style="{StaticResource normalLabel}"/>
+                                    <Label Text="{Binding Hole11}" Style="{StaticResource normalLabel}"/>
+                                    <Label Text="{Binding Hole12}" Style="{StaticResource normalLabel}"/>
+                                    <Label Text="{Binding Hole13}" Style="{StaticResource normalLabel}"/>
+                                    <Label Text="{Binding Hole14}" Style="{StaticResource normalLabel}"/>
+                                    <Label Text="{Binding Hole15}" Style="{StaticResource normalLabel}"/>
+                                    <Label Text="{Binding Hole16}" Style="{StaticResource normalLabel}"/>
+                                    <Label Text="{Binding Hole17}" Style="{StaticResource normalLabel}"/>
+                                    <Label Text="{Binding Hole18}" Style="{StaticResource normalLabel}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
 
 </ContentPage>   
     

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Views.LoginPage"
+             BackgroundColor= "#a80000">
+    <ContentPage.Content>
+        <Grid VerticalOptions="CenterAndExpand">
+            <Grid.ColumnDefinitions>
+                
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="75"/>
+                
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+            <Entry x:Name="usernameEntry" WidthRequest="200" Grid.Row="0" Grid.Column="1" Keyboard="Text"  Placeholder="Username" HorizontalOptions="CenterAndExpand"/>
+            <Entry x:Name="passwordEntry" WidthRequest="200" Grid.Row="1" Grid.Column="1" Keyboard="Text" Placeholder="Password" HorizontalOptions="CenterAndExpand" IsPassword="true" />
+            <Label x:Name="errorMessage" WidthRequest="500" FontSize="Micro" MinimumWidthRequest="200" Grid.Row="2" Grid.Column="1" TextColor="Black"/>
+            <Button x:Name="LoginButton" Grid.Row="3" Grid.Column="1" Text="Login" Clicked="LoginButton_Clicked" TextColor="Black" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

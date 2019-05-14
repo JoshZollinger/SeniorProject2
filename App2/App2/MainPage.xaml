@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customEntry="clr-namespace:CustomEntry"
+             xmlns:local="clr-namespace:App2"
+             xmlns:ViewModels="clr-namespace:App2.ViewModels;assembly=App2"
+             x:Class="App2.MainPage"
+             BackgroundColor= "#a80000">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="NormalStackLayout" TargetType="StackLayout">
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="Padding" Value="20,15,75,5"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="Orientation" Value="Horizontal"/>
+                <Setter Property="Spacing" Value="15"/>
+            </Style>
+            <Style x:Key="MyEntry" TargetType="customEntry:MyEntry">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontSize" Value="10"/>
+                <Setter Property="MaxLength" Value="2"/>
+                <Setter Property="Keyboard" Value="Numeric"/>
+                <Setter Property="ReturnType" Value="Next"/>
+            </Style>
+            <Style x:Key="secondaryEntry" TargetType="customEntry:MyEntry">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="10"/>
+                <Setter Property="MaxLength" Value="2"/>
+                <Setter Property="Keyboard" Value="Numeric"/>
+                <Setter Property="ReturnType" Value="Next"/>
+            </Style>
+            <Style x:Key="HoleLabel" TargetType="Label">
+                <Setter Property="WidthRequest" Value="45"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.BindingContext>
+        <ViewModels:courseViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="10" Padding="0" Orientation="Vertical">
+                <StackLayout HeightRequest="150">
+                    <Picker x:Name="eventPicker" Title="Select an Event">
+                        <Picker.Items>
+                            <x:String>test event</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Picker x:Name="coursePicker" Title="Select a Course" ItemsSource="{Binding GolfCoursesList}" ItemDisplayBinding="{Binding courseName}" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <DatePicker x:Name="datePicker" VerticalOptions="FillAndExpand"/>
+                        <Picker x:Name="roundPicker" Title="Select a round" VerticalOptions="FillAndExpand">
+                            <Picker.Items>
+                                <x:String>1</x:String>
+                                <x:String>2</x:String>
+                                <x:String>3</x:String>
+                                <x:String>4</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                </StackLayout>
+                <BoxView BackgroundColor="White" HeightRequest="1" WidthRequest="1000"/>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 1" Style="{StaticResource HoleLabel}" />
+                    <customEntry:MyEntry x:Name="Hole1Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed" />
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR1Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" MinimumWidthRequest="45" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch1" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" MinimumWidthRequest="45" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole1Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <BoxView BackgroundColor="Black" HeightRequest="1" WidthRequest="1000"/>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 2" Style="{StaticResource HoleLabel}"/>
+                    <customEntry:MyEntry x:Name="Hole2Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR2Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch2" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole2Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 3" Style="{StaticResource HoleLabel}"/>
+                    <customEntry:MyEntry x:Name="Hole3Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR3Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch3" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole3Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 4" Style="{StaticResource HoleLabel}"/>
+                    <customEntry:MyEntry x:Name="Hole4Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR4Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch4" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole4Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 5" Style="{StaticResource HoleLabel}"/>
+                    <customEntry:MyEntry x:Name="Hole5Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR5Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch5" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole5Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 6" Style="{StaticResource HoleLabel}"/>
+                    <customEntry:MyEntry x:Name="Hole6Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR6Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch6" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole6Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 7" Style="{StaticResource HoleLabel}"/>
+                    <customEntry:MyEntry x:Name="Hole7Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR7Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch7" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole7Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 8" Style="{StaticResource HoleLabel}"/>
+                    <customEntry:MyEntry x:Name="Hole8Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR8Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch8" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole8Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 9" Style="{StaticResource HoleLabel}"/>
+                    <customEntry:MyEntry x:Name="Hole9Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR9Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch9" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole9Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 10" Style="{StaticResource HoleLabel}"/>
+                    <customEntry:MyEntry x:Name="Hole10Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR10Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch10" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole10Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 11" Style="{StaticResource HoleLabel}"/>
+                    <customEntry:MyEntry x:Name="Hole11Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR11Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch11" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole11Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 12" Style="{StaticResource HoleLabel}"/>
+                    <customEntry:MyEntry x:Name="Hole12Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR12Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch12" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole12Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 13" Style="{StaticResource HoleLabel}"/>
+                    <customEntry:MyEntry x:Name="Hole13Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR13Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch13" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole13Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 14" Style="{StaticResource HoleLabel}"/>
+                    <customEntry:MyEntry x:Name="Hole14Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR14Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch14" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole14Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 15" Style="{StaticResource HoleLabel}"/>
+                    <customEntry:MyEntry x:Name="Hole15Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR15Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch15" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole15Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 16" Style="{StaticResource HoleLabel}"/>
+                    <customEntry:MyEntry x:Name="Hole16Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR16Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch16" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole16Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 17" Style="{StaticResource HoleLabel}"/>
+                    <customEntry:MyEntry x:Name="Hole17Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR17Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch17" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole17Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <StackLayout Style="{StaticResource NormalStackLayout}">
+                    <Label Text="Hole 18" Style="{StaticResource HoleLabel}"/>
+                    <customEntry:MyEntry x:Name="Hole18Entry" Style="{StaticResource MyEntry}" Completed="MyEntry_Completed"/>
+                </StackLayout>
+                <Grid Padding="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch x:Name="GIR18Switch" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Switch x:Name="FairwaySwitch18" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <customEntry:MyEntry  x:Name="Hole18Putts" Grid.Column="2"  WidthRequest="45"  Style="{StaticResource secondaryEntry}"/>
+                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="GIR" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Text="Fairway" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label FontAttributes="Bold" Grid.Column="2" Grid.Row="1" Text="Putts" VerticalOptions="Start" HorizontalOptions="Center"/>
+                </Grid>
+                <Button x:Name="SubmitButton" Text="Submit" Clicked="SubmitButton_Clicked"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+
+
+

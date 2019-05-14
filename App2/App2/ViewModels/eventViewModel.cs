@@ -5,28 +5,35 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace App2.ViewModels
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class eventViewModel : INotifyPropertyChanged
     {
-        private List<GolfScore> golfScoresList;
+        private List<GolfEvent> golfEventsList;
 
-        public List<GolfScore> GolfScoresList
+        public List<GolfEvent> GolfEventsList
         {
-            get { return golfScoresList; }
+            get { return golfEventsList; }
             set
             {
-                golfScoresList = value;
+                golfEventsList = value;
                 OnPropertyChanged();
             }
         }
 
-        public MainViewModel()
+        public eventViewModel()
         {
-            var GolfScoreServices = new GolfScoreServices();
+            InitializeDataAsync();
+        }
 
-            GolfScoresList = GolfScoreServices.GetGolfScore();
+        private async Task InitializeDataAsync()
+        {
+
+            var golfEventServices = new GolfEventServices();
+
+            GolfEventsList = await golfEventServices.GetGolfEventsAsync();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

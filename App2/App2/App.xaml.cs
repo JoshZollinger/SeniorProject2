@@ -1,5 +1,6 @@
 ﻿using App2.Views;
 using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,9 +12,11 @@ namespace App2
         public App()
         {
             InitializeComponent();
+            bool isLoggedIn = Current.Properties.ContainsKey("IsLoggedIn") ? Convert.ToBoolean(Current.Properties["IsLoggedIn"]) : false;
 
-            MainPage = /*new NavigationPage(new StatsPage()); */new MainPage();
+            MainPage = new baseTabbedPage(isLoggedIn);
         }
+
 
         protected override void OnStart()
         {
